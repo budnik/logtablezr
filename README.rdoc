@@ -1,3 +1,4 @@
 == Just a sample app w/o model
 
-[It has not so many codez](http://github.com/dmitriybudnik/logtablezr/blob/master/app/controllers/loglines_controller.rb)  
+It has not so many codez. 
+Check it out:(http://github.com/dmitriybudnik/logtablezr/blob/master/app/controllers/loglines_controller.rb)  
