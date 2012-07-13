@@ -4,25 +4,19 @@ class LoglinesController < ApplicationController
     raise unless !params.has_key? :logline && params[:logline][:logfile].blank?
     f=params[:logline][:logfile]
     @file_name=f.original_filename  
-  #  @logfile = Logfile.create :file_name => f.original_filename
-   # if Logline.create parse_logfile(f)
-    #   render :text => "<h1>It's uploaded</h1>", :flash => "OK"
-   # end
 
-   @loglines = parse_logfile(f)
+    @loglines = parse_logfile(f)
   end
 
   private
-  
+
     def parse_logfile(file)
       vb_regexp = /\A=+.*Version (?<ver>\w+) Build (?<build>\w+)/
       loglines=[]
-      n=0
+
       file.read.each_line("\r\n\r\n") do |block|
         @ver=@build=nil
         block.each_line do |line|
-                  
-       p n+=1
           if line.match(/\A\s*\z/)
             next
           elsif @ver 
@@ -51,5 +45,5 @@ class LoglinesController < ApplicationController
       end
       loglines
     end
-  
+
 end
