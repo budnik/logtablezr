@@ -1,5 +1,17 @@
-<%= form_for "logline", :url=>"/loglines", :multipart => true do |f| %>
-  <%= f.label :logfile, 'Please upload your logs' %>
-  <%= f.file_field :logfile %>
-  <%= f.submit "upload" %>
-<% end %>
+<div class="row">
+  <%= form_for "logline", :url=>"/loglines", :multipart => true, :html => {:class => "form-horizontal"} do |f| %>
+    <div class="row">
+      <div class="span7">
+        <%= f.label :logfile, 'Please upload your logs' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span5">
+        <%= f.file_field :logfile %>
+      </div>
+      <div class="span2">
+        <%= f.submit "upload", :class=>"btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>
