@@ -1,0 +1,5 @@
+<%= form_for "logline", :url=>"/loglines", :multipart => true do |f| %>
+  <%= f.label :logfile, 'Please upload your logs' %>
+  <%= f.file_field :logfile %>
+  <%= f.submit "upload" %>
+<% end %>

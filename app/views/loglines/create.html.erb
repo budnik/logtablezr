@@ -1,0 +1,15 @@
+<h2><%= @file_name %></h2>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Logged at</th>
+      <th></th>
+      <th>Type</th>
+      <th>Build</th>
+      <th>Version</th>
+      <th>Location</th>
+      <th>Message</th>
+    </tr>
+  </thead>
+  <%= render :partial => "line", :collection => @loglines %>
+</table>
