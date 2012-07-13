@@ -1,9 +1,5 @@
 class LoglinesController < ApplicationController
 
-  def new
-    #
-	end
-
   def create
     raise unless !params.has_key? :logline && params[:logline][:logfile].blank?
     f=params[:logline][:logfile]
